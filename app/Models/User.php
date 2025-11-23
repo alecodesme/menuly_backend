@@ -69,4 +69,9 @@ class User extends Authenticatable implements JWTSubject
             'password' => 'hashed',
         ];
     }
+
+    public function ingredients()
+    {
+        return $this->hasMany(Ingredient::class, 'user_id', 'id');
+    }
 }
